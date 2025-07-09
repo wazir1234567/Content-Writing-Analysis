@@ -1,0 +1,3420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamid Ali Khan | Content Writing Analyst</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3f7;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --text-color: #444;
+            --text-light: #777;
+            --transition: all 0.3s ease;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            font-size: 2.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(74, 111, 165, 0.1) 0%, rgba(22, 96, 136, 0.1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--text-light);
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50%;
+            max-width: 600px;
+            animation: fadeInRight 1s ease;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .skills {
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            margin-bottom: 20px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+            transition: width 1.5s ease;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background-color: white;
+        }
+
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: transparent;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(74, 111, 165, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .portfolio-overlay p {
+            transform: translateY(20px);
+            transition: var(--transition);
+            margin-bottom: 15px;
+        }
+
+        .portfolio-item:hover .portfolio-overlay h3,
+        .portfolio-item:hover .portfolio-overlay p {
+            transform: translateY(0);
+        }
+
+        .portfolio-link {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: white;
+            color: var(--primary-color);
+            border-radius: 30px;
+            font-weight: 500;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-link {
+            transform: translateY(0);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f8f9fa;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            display: none;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 30px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background-color: var(--primary-color);
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .faq-question {
+            padding: 20px;
+            background-color: var(--light-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background-color: #e9ecef;
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: white;
+        }
+
+        .faq-item.active .faq-question {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        /* Blog Section */
+        .blog {
+            background-color: white;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .blog-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .blog-card p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .read-more i {
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .read-more i {
+            transform: translateX(5px);
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #f8f9fa;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .contact-details h3 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--text-light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            color: var(--primary-color);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .footer-col p {
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .footer-links i {
+            font-size: 0.8rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+        }
+
+        /* Chatbot */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 350px;
+            max-width: 90%;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            overflow: hidden;
+            transform: translateY(100%);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .chatbot-container.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .chatbot-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .chatbot-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .chatbot-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chatbot-body {
+            padding: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .chatbot-message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 18px;
+            max-width: 80%;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .chatbot-message.bot {
+            background-color: #f1f1f1;
+            border-bottom-left-radius: 5px;
+            margin-right: auto;
+        }
+
+        .chatbot-message.user {
+            background-color: var(--primary-color);
+            color: white;
+            border-bottom-right-radius: 5px;
+            margin-left: auto;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .chatbot-input button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .chatbot-input button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .chatbot-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .chatbot-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--secondary-color);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--box-shadow);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Admin Controls */
+        .admin-controls {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 15px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .admin-controls.active {
+            display: block;
+        }
+
+        .admin-btn {
+            display: block;
+            margin-bottom: 10px;
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .admin-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .admin-toggle {
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 1001;
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Service Modal */
+        .service-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .service-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .service-modal-content {
+            background-color: white;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+        }
+
+        .service-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .service-modal-close:hover {
+            color: var(--primary-color);
+        }
+
+        .service-hero {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .service-hero-image {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .service-hero-image img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .service-hero-content {
+            flex: 1;
+        }
+
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .service-feature {
+            background-color: var(--light-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .service-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .service-feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .service-process {
+            margin: 40px 0;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .process-step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .service-pricing {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin: 40px 0;
+        }
+
+        .pricing-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .pricing-plan {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .pricing-plan:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-plan.popular {
+            border: 2px solid var(--accent-color);
+            position: relative;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .pricing-plan h4 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .pricing-features {
+            margin-bottom: 25px;
+        }
+
+        .pricing-features li {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .service-testimonials {
+            margin: 40px 0;
+        }
+
+        .service-testimonial {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 20px;
+        }
+
+        .service-testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .service-testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .service-author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .service-author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-cta {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(74, 111, 165, 0.1) 0%, rgba(22, 96, 136, 0.1) 100%);
+            border-radius: var(--border-radius);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px) translateY(-50%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) translateY(-50%);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-image {
+                width: 45%;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-image, .about-text {
+                flex: none;
+                width: 100%;
+            }
+
+            .service-hero {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 0;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero {
+                height: auto;
+                padding: 120px 0 80px;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .hero-image {
+                position: relative;
+                width: 100%;
+                max-width: 500px;
+                margin: 40px auto 0;
+                transform: none;
+                top: auto;
+                right: auto;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .portfolio-grid, .blog-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+
+            .chatbot-container {
+                width: 300px;
+                right: 15px;
+                bottom: 15px;
+            }
+
+            .whatsapp-btn {
+                left: 15px;
+                bottom: 15px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .chatbot-btn {
+                right: 15px;
+                bottom: 80px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+
+            .back-to-top {
+                right: 15px;
+                bottom: 150px;
+            }
+
+            .service-modal-content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .testimonial-slide {
+                padding: 30px 20px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .service-features {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-plans {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Hamid Ali<span> Khan</span></a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Content Writing & Analysis That Drives Results</h1>
+                <p>I craft compelling, data-driven content that engages audiences and achieves your business objectives. With a strategic approach to content analysis, I help brands communicate effectively in today's digital landscape.</p>
+                <div class="hero-btns">
+                    <a href="#portfolio" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Hire Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Content Writing">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://i.postimg.cc/gkhHNQy5/Screenshot-2025-07-06-193748.png" alt="Hamid Ali Khan">
+                </div>
+                <div class="about-text">
+                    <h2>Content Strategist & Writing Analyst</h2>
+                    <p>With over 8 years of experience in content creation and analysis, I specialize in developing data-driven content strategies that resonate with target audiences and deliver measurable results.</p>
+                    <p>My approach combines creative storytelling with analytical rigor, ensuring that every piece of content serves a strategic purpose and contributes to your business goals.</p>
+                    <div class="skills">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Content Strategy</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>SEO Writing</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Data Analysis</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Content Marketing</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn" style="margin-top: 20px;">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <h2 class="section-title">My Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>Content Strategy</h3>
+                    <p>Comprehensive content plans aligned with business objectives, audience needs, and SEO best practices to maximize engagement and conversions.</p>
+                    <a href="#" class="btn service-btn" data-service="content-strategy" style="margin-top: 15px;">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Content Analysis</h3>
+                    <p>Data-driven evaluation of content performance with actionable insights to optimize your content marketing ROI and audience engagement.</p>
+                    <a href="#" class="btn service-btn" data-service="content-analysis" style="margin-top: 15px;">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO Writing</h3>
+                    <p>High-quality, optimized content that ranks well in search engines while maintaining readability and providing genuine value to readers.</p>
+                    <a href="#" class="btn service-btn" data-service="seo-writing" style="margin-top: 15px;">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Content Marketing</h3>
+                    <p>Strategic content creation and distribution across multiple channels to build brand awareness and drive targeted traffic.</p>
+                    <a href="#" class="btn service-btn" data-service="content-marketing" style="margin-top: 15px;">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Whitepapers & Reports</h3>
+                    <p>In-depth, authoritative content that establishes thought leadership and generates high-quality leads for B2B companies.</p>
+                    <a href="#" class="btn service-btn" data-service="whitepapers" style="margin-top: 15px;">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>Editing & Proofreading</h3>
+                    <p>Professional editing services to polish existing content, ensuring clarity, consistency, and error-free communication.</p>
+                    <a href="#" class="btn service-btn" data-service="editing" style="margin-top: 15px;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">My Portfolio</h2>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="strategy">Strategy</button>
+                <button class="filter-btn" data-filter="writing">Writing</button>
+                <button class="filter-btn" data-filter="analysis">Analysis</button>
+                <button class="filter-btn" data-filter="marketing">Marketing</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="strategy">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Content Strategy" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Tech Startup Content Strategy</h3>
+                        <p>Developed a comprehensive content strategy for a SaaS startup, resulting in 150% increase in organic traffic.</p>
+                        <a href="#" class="portfolio-link">View Case Study</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="writing">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="SEO Writing" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>E-commerce SEO Content</h3>
+                        <p>Created 50+ product descriptions and blog posts that improved search rankings and increased conversions by 40%.</p>
+                        <a href="#" class="portfolio-link">View Samples</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="analysis">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" alt="Content Analysis" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Content Performance Audit</h3>
+                        <p>Conducted a full content audit for a financial services company, identifying opportunities that increased engagement by 65%.</p>
+                        <a href="#" class="portfolio-link">See Report</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="marketing">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Content Marketing" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>B2B Content Marketing</h3>
+                        <p>Developed and executed a content marketing campaign that generated 250+ qualified leads in 3 months.</p>
+                        <a href="#" class="portfolio-link">View Campaign</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="writing">
+                    <img src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Whitepaper" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Industry Whitepaper</h3>
+                        <p>Researched and wrote a 25-page whitepaper that became a lead generation tool for a healthcare technology firm.</p>
+                        <a href="#" class="portfolio-link">Read Excerpt</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="strategy">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Editorial Calendar" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Editorial Calendar System</h3>
+                        <p>Created and implemented an editorial calendar workflow that improved content team productivity by 30%.</p>
+                        <a href="#" class="portfolio-link">View System</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        "Sarah's content strategy transformed our digital presence. Her data-driven approach helped us identify exactly what our audience wanted, resulting in a 120% increase in engagement and a 75% boost in lead generation. She's not just a writer - she's a strategic partner."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://i.postimg.cc/3rq91qk9/Whats-App-Image-2025-07-03-at-00-06-31-496bd214-1.jpg" alt="Hamid Ali Khan">
+                        </div>
+                        <div class="author-info">
+                            <h4>Hamid Ali Khan</h4>
+                            <p>Marketing Director, TechSolutions Inc.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        "The content audit Sarah conducted for our e-commerce site was eye-opening. Her recommendations helped us streamline our content, focus on what works, and eliminate what doesn't. Our conversion rate improved by 40% within three months of implementing her suggestions."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://i.postimg.cc/j2yXLxR5/Whats-App-Image-2025-07-03-at-00-06-24-b719d684-1.jpg" alt="Engr Zakria">
+                        </div>
+                        <div class="author-info">
+                            <h4>Engr Zakria</h4>
+                            <p>CEO, ShopGlobal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        "Working with Sarah on our whitepaper series was a game-changer. She took complex financial concepts and made them accessible without dumbing them down. The whitepapers have become our most effective lead generation tool, with a 60% conversion rate from download to demo request."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://i.postimg.cc/HL0yMCg0/515845962-1435309587731054-4249387188832076388-n.jpg" alt="Abdulwahab">
+                        </div>
+                        <div class="author-info">
+                            <h4>Abdulwahab</h4>
+                            <p>VP of Marketing, Finova Capital</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <div class="slider-dot active" data-slide="0"></div>
+                    <div class="slider-dot" data-slide="1"></div>
+                    <div class="slider-dot" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What types of businesses do you work with?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>I work with businesses of all sizes across various industries, including technology, finance, healthcare, e-commerce, and professional services. My expertise is particularly valuable for B2B companies, SaaS businesses, and organizations looking to establish thought leadership through content.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you measure the success of content?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>I use a combination of quantitative and qualitative metrics including organic traffic, engagement rates (time on page, bounce rate), conversion rates, search rankings, social shares, and lead generation. For each project, we establish KPIs aligned with your business objectives before content creation begins.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's your typical process for a new content project?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>My process includes: 1) Discovery session to understand your goals and audience, 2) Competitive and gap analysis, 3) Content strategy development, 4) Keyword research and topic ideation, 5) Content creation, 6) Editing and optimization, 7) Performance tracking and iteration. The exact process may vary based on project scope.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does it take to see results from content marketing?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While some results (like social engagement) can be immediate, most content marketing efforts take 3-6 months to show significant traction in organic search results and lead generation. Consistent, high-quality content published over time yields compounding returns, which is why I recommend a minimum 6-month commitment for content strategy projects.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer ongoing content management services?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, I offer monthly content management packages that include strategy, creation, publishing, and performance analysis. These ongoing relationships allow me to deeply understand your business and continuously optimize content performance based on data insights.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section blog" id="blog">
+        <div class="container">
+            <h2 class="section-title">Latest Articles</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Content Strategy" class="blog-img">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> June 15, 2023</span>
+                            <span><i class="far fa-comments"></i> 12 Comments</span>
+                        </div>
+                        <h3>The Data-Driven Approach to Content Strategy</h3>
+                        <p>Learn how to leverage analytics to create content that truly resonates with your audience and drives measurable business results...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="SEO Writing" class="blog-img">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> May 28, 2023</span>
+                            <span><i class="far fa-comments"></i> 8 Comments</span>
+                        </div>
+                        <h3>SEO Writing in 2023: Beyond Keywords</h3>
+                        <p>Discover the evolving landscape of SEO content creation and how to balance search engine requirements with genuine user value...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" alt="Content Analysis" class="blog-img">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar-alt"></i> April 10, 2023</span>
+                            <span><i class="far fa-comments"></i> 15 Comments</span>
+                        </div>
+                        <h3>How to Conduct a Comprehensive Content Audit</h3>
+                        <p>A step-by-step guide to evaluating your existing content library to identify gaps, opportunities, and areas for improvement...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="#" class="btn">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Section -->
+<section class="section contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Location</h3>
+                        <p>F10 Markaz Islamabad</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <a href="mailto:ha4006115@gmail.com">ha4006115@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <a href="tel:+923304006115">+923304006115</a>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form method="POST" id="contactForm">
+                    <input type="hidden" name="access_key" value="db0500d8-cc92-4124-ba30-384c5194622b">
+                    
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    <div id="result" style="margin-top: 15px;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+const form = document.getElementById('contactForm');
+const result = document.getElementById('result');
+
+form.addEventListener('submit', function(e) {
+    const formData = new FormData(form);
+    e.preventDefault();
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    result.innerHTML = "Please wait...";
+    result.style.display = "block";
+
+    fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                result.innerHTML = json.message;
+                result.style.color = "green";
+            } else {
+                console.log(response);
+                result.innerHTML = json.message;
+                result.style.color = "red";
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            result.innerHTML = "Something went wrong!";
+            result.style.color = "red";
+        })
+        .then(function() {
+            form.reset();
+            setTimeout(() => {
+                result.style.display = "none";
+            }, 5000);
+        });
+});
+</script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Hamid Ali Khan</h3>
+                    <p>Content strategist and writing analyst helping businesses communicate effectively through data-driven content solutions.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+                        <li><a href="#blog"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="service-btn" data-service="content-strategy"><i class="fas fa-chevron-right"></i> Content Strategy</a></li>
+                        <li><a href="#" class="service-btn" data-service="content-analysis"><i class="fas fa-chevron-right"></i> Content Analysis</a></li>
+                        <li><a href="#" class="service-btn" data-service="seo-writing"><i class="fas fa-chevron-right"></i> SEO Writing</a></li>
+                        <li><a href="#" class="service-btn" data-service="content-marketing"><i class="fas fa-chevron-right"></i> Content Marketing</a></li>
+                        <li><a href="#" class="service-btn" data-service="whitepapers"><i class="fas fa-chevron-right"></i> Whitepapers</a></li>
+                        <li><a href="#" class="service-btn" data-service="editing"><i class="fas fa-chevron-right"></i> Editing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to my newsletter for content strategy tips and industry insights.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" class="form-control" style="margin-bottom: 10px;">
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Hamid Ali Khan. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+923304006115" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Chatbot Button -->
+    <div class="chatbot-btn">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h3>Content Writing Assistant</h3>
+            <button class="chatbot-toggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-body" id="chatbot-body">
+            <div class="chatbot-message bot">
+                Hi there! I'm Sarah's content assistant. How can I help you today? Here are some quick options:
+                <div style="margin-top: 10px;">
+                    <button class="chat-option" data-option="services">What services do you offer?</button>
+                    <button class="chat-option" data-option="pricing">What are your rates?</button>
+                    <button class="chat-option" data-option="availability">Are you available for new projects?</button>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" placeholder="Type your message..." id="chatbot-input">
+            <button id="chatbot-send"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Admin Controls -->
+    <div class="admin-toggle">
+        <i class="fas fa-cog"></i>
+    </div>
+    <div class="admin-controls">
+        <button class="admin-btn" id="edit-content"><i class="fas fa-edit"></i> Edit Content</button>
+        <button class="admin-btn" id="upload-content"><i class="fas fa-upload"></i> Upload Content</button>
+        <button class="admin-btn" id="delete-content"><i class="fas fa-trash"></i> Delete Content</button>
+        <button class="admin-btn" id="save-changes"><i class="fas fa-save"></i> Save Changes</button>
+    </div>
+
+    <!-- Service Modal -->
+    <div class="service-modal" id="service-modal">
+        <div class="service-modal-content">
+            <span class="service-modal-close">&times;</span>
+            <div id="service-modal-content">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Portfolio Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Testimonial Slider
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const sliderDots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            testimonialSlides.forEach(slide => slide.classList.remove('active'));
+            sliderDots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonialSlides[index].classList.add('active');
+            sliderDots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        sliderDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+
+        // Auto slide change
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % testimonialSlides.length;
+            showSlide(currentSlide);
+        }, 5000);
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            // For this example, we'll just show an alert
+            Swal.fire({
+                title: 'Thank you!',
+                text: `Thanks ${name}! Your message has been sent. I'll get back to you soon.`,
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+            
+            // Reset the form
+            contactForm.reset();
+        });
+
+        // Chatbot Functionality
+        const chatbotBtn = document.querySelector('.chatbot-btn');
+        const chatbotContainer = document.querySelector('.chatbot-container');
+        const chatbotToggle = document.querySelector('.chatbot-toggle');
+        const chatbotBody = document.getElementById('chatbot-body');
+        const chatbotInput = document.getElementById('chatbot-input');
+        const chatbotSend = document.getElementById('chatbot-send');
+
+        chatbotBtn.addEventListener('click', () => {
+            chatbotContainer.classList.toggle('active');
+        });
+
+        chatbotToggle.addEventListener('click', () => {
+            chatbotContainer.classList.remove('active');
+        });
+
+        function addBotMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('chatbot-message', 'bot');
+            messageDiv.innerHTML = message;
+            chatbotBody.appendChild(messageDiv);
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+        }
+
+        function addUserMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('chatbot-message', 'user');
+            messageDiv.textContent = message;
+            chatbotBody.appendChild(messageDiv);
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+        }
+
+        chatbotSend.addEventListener('click', () => {
+            const message = chatbotInput.value.trim();
+            if (message) {
+                addUserMessage(message);
+                chatbotInput.value = '';
+                
+                // Simulate bot response
+                setTimeout(() => {
+                    if (message.toLowerCase().includes('service')) {
+                        addBotMessage('I offer several content-related services including content strategy, SEO writing, content analysis, and more. You can visit my <a href="#services">services page</a> for detailed information.');
+                    } else if (message.toLowerCase().includes('price') || message.toLowerCase().includes('rate')) {
+                        addBotMessage('Pricing depends on the scope of the project. For a customized quote, please provide details about your project or <a href="#contact">contact me directly</a>.');
+                    } else if (message.toLowerCase().includes('available') || message.toLowerCase().includes('hire')) {
+                        addBotMessage('I\'m currently accepting new clients. Please <a href="#contact">send me a message</a> with details about your project and I\'ll get back to you within 24 hours.');
+                    } else {
+                        addBotMessage('Thanks for your message! For more specific inquiries, please <a href="#contact">contact me directly</a> and I\'ll respond as soon as possible.');
+                    }
+                }, 1000);
+            }
+        });
+
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                chatbotSend.click();
+            }
+        });
+
+        // Chat options
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('chat-option')) {
+                const option = e.target.getAttribute('data-option');
+                let response = '';
+                
+                switch(option) {
+                    case 'services':
+                        response = 'I offer comprehensive content services including:<br><br>- Content Strategy Development<br>- SEO-Optimized Writing<br>- Content Performance Analysis<br>- Content Marketing Campaigns<br>- Whitepaper & Report Writing<br>- Professional Editing Services<br><br>Visit my <a href="#services">services page</a> for more details.';
+                        break;
+                    case 'pricing':
+                        response = 'My pricing varies based on project scope and requirements. Here are general guidelines:<br><br>- Blog posts: $200-$500<br>- Content strategy: $1,500+<br>- SEO content: $0.20-$0.50 per word<br>- Whitepapers: $2,000+<br><br>For an exact quote, please <a href="#contact">contact me</a> with your project details.';
+                        break;
+                    case 'availability':
+                        response = 'I currently have availability for new projects starting next month. For urgent requests, please <a href="#contact">contact me directly</a> to discuss timelines.';
+                        break;
+                }
+                
+                addUserMessage(e.target.textContent);
+                setTimeout(() => {
+                    addBotMessage(response);
+                }, 500);
+            }
+        });
+
+        // Admin Controls
+        const adminToggle = document.querySelector('.admin-toggle');
+        const adminControls = document.querySelector('.admin-controls');
+
+        adminToggle.addEventListener('click', () => {
+            adminControls.classList.toggle('active');
+        });
+
+        // Service Modal
+        const serviceModal = document.getElementById('service-modal');
+        const serviceModalContent = document.getElementById('service-modal-content');
+        const serviceModalClose = document.querySelector('.service-modal-close');
+        const serviceBtns = document.querySelectorAll('.service-btn');
+
+        // Service content templates
+        const serviceTemplates = {
+            'content-strategy': `
+                <div class="service-hero">
+                    <div class="service-hero-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Content Strategy">
+                    </div>
+                    <div class="service-hero-content">
+                        <h2>Content Strategy</h2>
+                        <p>A comprehensive content strategy is the foundation of all successful content marketing efforts. I develop data-driven strategies that align with your business goals and resonate with your target audience.</p>
+                        <p>My approach combines market research, competitive analysis, audience insights, and SEO best practices to create a roadmap for content that drives results.</p>
+                    </div>
+                </div>
+
+                <div class="service-features">
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h4>Goal Alignment</h4>
+                        <p>Content strategies designed to support specific business objectives and KPIs.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Audience Focus</h4>
+                        <p>Strategies built on deep understanding of your target audience's needs and behaviors.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Data-Driven</h4>
+                        <p>Decisions based on analytics and performance metrics for maximum impact.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>SEO Optimized</h4>
+                        <p>Strategies that improve search visibility and organic traffic growth.</p>
+                    </div>
+                </div>
+
+                <div class="service-process">
+                    <h3>My Content Strategy Process</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="process-step-number">1</div>
+                            <h4>Discovery & Research</h4>
+                            <p>Deep dive into your business, audience, and competitive landscape.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">2</div>
+                            <h4>Content Audit</h4>
+                            <p>Evaluation of existing content to identify gaps and opportunities.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">3</div>
+                            <h4>Strategy Development</h4>
+                            <p>Creation of a customized content strategy with clear objectives.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">4</div>
+                            <h4>Implementation Plan</h4>
+                            <p>Detailed roadmap for content creation, distribution, and promotion.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">5</div>
+                            <h4>Measurement & Optimization</h4>
+                            <p>Ongoing analysis and refinement based on performance data.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-pricing">
+                    <h3>Pricing Options</h3>
+                    <p>Choose the package that best fits your needs:</p>
+                    
+                    <div class="pricing-plans">
+                        <div class="pricing-plan">
+                            <h4>Basic Strategy</h4>
+                            <div class="price">$1,500 <span>/ one-time</span></div>
+                            <ul class="pricing-features">
+                                <li>Content audit & analysis</li>
+                                <li>Competitor research</li>
+                                <li>Basic content strategy</li>
+                                <li>3-month content plan</li>
+                                <li>1 revision</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                        <div class="pricing-plan popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <h4>Comprehensive Strategy</h4>
+                            <div class="price">$3,500 <span>/ one-time</span></div>
+                            <ul class="pricing-features">
+                                <li>Full content audit & analysis</li>
+                                <li>In-depth competitor research</li>
+                                <li>Detailed content strategy</li>
+                                <li>6-month content calendar</li>
+                                <li>SEO strategy included</li>
+                                <li>3 revisions</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                        <div class="pricing-plan">
+                            <h4>Ongoing Management</h4>
+                            <div class="price">$2,000 <span>/ month</span></div>
+                            <ul class="pricing-features">
+                                <li>Comprehensive strategy</li>
+                                <li>Monthly content planning</li>
+                                <li>Performance tracking</li>
+                                <li>Quarterly strategy updates</li>
+                                <li>Unlimited revisions</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-testimonials">
+                    <h3>What Clients Say</h3>
+                    
+                    <div class="service-testimonial">
+                        <div class="service-testimonial-content">
+                            "Sarah's content strategy transformed our digital presence. Within 6 months, we saw a 150% increase in organic traffic and a 75% boost in lead generation. Her strategic approach helped us focus our efforts on what really matters to our audience."
+                        </div>
+                        <div class="service-testimonial-author">
+                            <div class="service-author-img">
+                                <img src="https://i.postimg.cc/3rq91qk9/Whats-App-Image-2025-07-03-at-00-06-31-496bd214-1.jpg" alt="Client">
+                            </div>
+                            <div>
+                                <h4>Hamid Ali Khan</h4>
+                                <p>Marketing Director, TechSolutions Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-testimonial">
+                        <div class="service-testimonial-content">
+                            "The editorial calendar system Sarah implemented streamlined our entire content operation. Our team's productivity increased by 30%, and we're now publishing more consistent, higher-quality content than ever before."
+                        </div>
+                        <div class="service-testimonial-author">
+                            <div class="service-author-img">
+                                <img src="https://i.postimg.cc/j2yXLxR5/Whats-App-Image-2025-07-03-at-00-06-24-b719d684-1.jpg" alt="Client">
+                            </div>
+                            <div>
+                                <h4>Engr Zakria</h4>
+                                <p>Content Manager, DigitalFirst</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-cta">
+                    <h3>Ready to Transform Your Content Strategy?</h3>
+                    <p>Let's discuss how I can help you create content that drives real business results.</p>
+                    <a href="#contact" class="btn" style="margin-top: 20px;">Contact Me</a>
+                </div>
+            `,
+            'content-analysis': `
+                <div class="service-hero">
+                    <div class="service-hero-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" alt="Content Analysis">
+                    </div>
+                    <div class="service-hero-content">
+                        <h2>Content Analysis</h2>
+                        <p>Data-driven content analysis helps you understand what's working, what's not, and how to optimize your content for better performance. I provide actionable insights that improve engagement, conversions, and ROI.</p>
+                        <p>My analysis goes beyond surface-level metrics to uncover the strategic opportunities in your content portfolio.</p>
+                    </div>
+                </div>
+
+                <div class="service-features">
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h4>Performance Metrics</h4>
+                        <p>Comprehensive analysis of key performance indicators for all content.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>SEO Evaluation</h4>
+                        <p>Detailed assessment of content's search performance and opportunities.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Audience Insights</h4>
+                        <p>Understanding how different audience segments interact with your content.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Actionable Recommendations</h4>
+                        <p>Clear, practical steps to improve content performance.</p>
+                    </div>
+                </div>
+
+                <div class="service-process">
+                    <h3>My Content Analysis Process</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="process-step-number">1</div>
+                            <h4>Data Collection</h4>
+                            <p>Gathering all relevant performance data from analytics platforms.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">2</div>
+                            <h4>Content Inventory</h4>
+                            <p>Categorizing and organizing all existing content assets.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">3</div>
+                            <h4>Performance Evaluation</h4>
+                            <p>Assessing each piece against key performance metrics.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">4</div>
+                            <h4>Gap Analysis</h4>
+                            <p>Identifying missing content opportunities and weaknesses.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">5</div>
+                            <h4>Recommendations</h4>
+                            <p>Providing strategic recommendations for improvement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-pricing">
+                    <h3>Pricing Options</h3>
+                    <p>Choose the package that best fits your needs:</p>
+                    
+                    <div class="pricing-plans">
+                        <div class="pricing-plan">
+                            <h4>Basic Audit</h4>
+                            <div class="price">$1,000 <span>/ one-time</span></div>
+                            <ul class="pricing-features">
+                                <li>Analysis of up to 50 content pieces</li>
+                                <li>Basic performance metrics</li>
+                                <li>SEO evaluation</li>
+                                <li>Summary report</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                        <div class="pricing-plan popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <h4>Comprehensive Audit</h4>
+                            <div class="price">$2,500 <span>/ one-time</span></div>
+                            <ul class="pricing-features">
+                                <li>Analysis of entire content library</li>
+                                <li>Advanced performance metrics</li>
+                                <li>Detailed SEO evaluation</li>
+                                <li>Competitive analysis</li>
+                                <li>Actionable recommendations</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                        <div class="pricing-plan">
+                            <h4>Ongoing Analysis</h4>
+                            <div class="price">$1,500 <span>/ month</span></div>
+                            <ul class="pricing-features">
+                                <li>Monthly content performance reports</li>
+                                <li>Continuous optimization recommendations</li>
+                                <li>Quarterly deep-dive audits</li>
+                                <li>Strategy adjustments</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-testimonials">
+                    <h3>What Clients Say</h3>
+                    
+                    <div class="service-testimonial">
+                        <div class="service-testimonial-content">
+                            "Sarah's content audit revealed opportunities we never would have found on our own. By implementing her recommendations, we increased engagement by 65% and conversions by 40% within three months."
+                        </div>
+                        <div class="service-testimonial-author">
+                            <div class="service-author-img">
+                                <img src="https://i.postimg.cc/HL0yMCg0/515845962-1435309587731054-4249387188832076388-n.jpg" alt="Client">
+                            </div>
+                            <div>
+                                <h4>Abdulwahab</h4>
+                                <p>VP of Marketing, Finova Capital</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-testimonial">
+                        <div class="service-testimonial-content">
+                            "The content performance analysis provided clear direction for our team. We were able to focus our efforts on the highest-performing content types and topics, resulting in better ROI from our content marketing budget."
+                        </div>
+                        <div class="service-testimonial-author">
+                            <div class="service-author-img">
+                                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Client">
+                            </div>
+                            <div>
+                                <h4>Emily Johnson</h4>
+                                <p>Director of Content, GrowthMarketing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-cta">
+                    <h3>Ready to Optimize Your Content Performance?</h3>
+                    <p>Let's analyze your content and uncover opportunities for improvement.</p>
+                    <a href="#contact" class="btn" style="margin-top: 20px;">Contact Me</a>
+                </div>
+            `,
+            'seo-writing': `
+                <div class="service-hero">
+                    <div class="service-hero-image">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="SEO Writing">
+                    </div>
+                    <div class="service-hero-content">
+                        <h2>SEO Writing</h2>
+                        <p>High-quality, optimized content that ranks well in search engines while providing genuine value to readers. I create content that satisfies both search algorithms and human audiences.</p>
+                        <p>My SEO writing combines thorough keyword research with engaging storytelling and conversion-focused writing techniques.</p>
+                    </div>
+                </div>
+
+                <div class="service-features">
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <h4>Keyword Optimization</h4>
+                        <p>Strategic use of keywords for maximum search visibility.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-user-edit"></i>
+                        </div>
+                        <h4>Reader-Focused</h4>
+                        <p>Content that engages and converts human readers.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h4>Internal Linking</h4>
+                        <p>Strategic linking to improve site architecture and SEO.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Mobile-Friendly</h4>
+                        <p>Content optimized for all devices and screen sizes.</p>
+                    </div>
+                </div>
+
+                <div class="service-process">
+                    <h3>My SEO Writing Process</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="process-step-number">1</div>
+                            <h4>Keyword Research</h4>
+                            <p>Identifying high-value, low-competition keywords.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">2</div>
+                            <h4>Content Planning</h4>
+                            <p>Structuring content for SEO and readability.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">3</div>
+                            <h4>Writing</h4>
+                            <p>Crafting engaging, optimized content.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">4</div>
+                            <h4>Optimization</h4>
+                            <p>Fine-tuning for search engines and conversions.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">5</div>
+                            <h4>Quality Assurance</h4>
+                            <p>Final review to ensure SEO and content quality standards.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-pricing">
+                    <h3>Pricing Options</h3>
+                    <p>Choose the package that best fits your needs:</p>
+                    
+                    <div class="pricing-plans">
+                        <div class="pricing-plan">
+                            <h4>Blog Posts</h4>
+                            <div class="price">$200 <span>/ post</span></div>
+                            <ul class="pricing-features">
+                                <li>800-1200 words</li>
+                                <li>Keyword research</li>
+                                <li>Basic SEO optimization</li>
+                                <li>1 revision</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                        <div class="pricing-plan popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <h4>Product Pages</h4>
+                            <div class="price">$150 <span>/ page</span></div>
+                            <ul class="pricing-features">
+                                <li>300-500 words</li>
+                                <li>Keyword optimization</li>
+                                <li>Conversion-focused</li>
+                                <li>2 revisions</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                        <div class="pricing-plan">
+                            <h4>SEO Content Package</h4>
+                            <div class="price">$1,500 <span>/ month</span></div>
+                            <ul class="pricing-features">
+                                <li>8 blog posts</li>
+                                <li>4 product pages</li>
+                                <li>Comprehensive keyword research</li>
+                                <li>Advanced SEO optimization</li>
+                                <li>Unlimited revisions</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-testimonials">
+                    <h3>What Clients Say</h3>
+                    
+                    <div class="service-testimonial">
+                        <div class="service-testimonial-content">
+                            "Sarah's SEO content helped us rank on the first page for several competitive keywords within 3 months. More importantly, the content actually converts visitors into customers."
+                        </div>
+                        <div class="service-testimonial-author">
+                            <div class="service-author-img">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                            </div>
+                            <div>
+                                <h4>Michael Chen</h4>
+                                <p>CEO, EcomSolutions</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-testimonial">
+                        <div class="service-testimonial-content">
+                            "We've worked with many SEO writers, but Sarah stands out for her ability to balance technical optimization with genuinely engaging content. Our bounce rates decreased while our rankings improved."
+                        </div>
+                        <div class="service-testimonial-author">
+                            <div class="service-author-img">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client">
+                            </div>
+                            <div>
+                                <h4>Lisa Rodriguez</h4>
+                                <p>Marketing Director, HealthPlus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-cta">
+                    <h3>Ready to Boost Your Search Rankings?</h3>
+                    <p>Let's create SEO-optimized content that drives traffic and conversions.</p>
+                    <a href="#contact" class="btn" style="margin-top: 20px;">Contact Me</a>
+                </div>
+            `,
+            'content-marketing': `
+                <div class="service-hero">
+                    <div class="service-hero-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Content Marketing">
+                    </div>
+                    <div class="service-hero-content">
+                        <h2>Content Marketing</h2>
+                        <p>Strategic content creation and distribution that builds brand awareness, engages your audience, and drives business growth. I develop content marketing campaigns that deliver measurable results.</p>
+                        <p>From planning to execution, I ensure your content reaches the right audience through the most effective channels.</p>
+                    </div>
+                </div>
+
+                <div class="service-features">
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h4>Campaign Planning</h4>
+                        <p>Strategic roadmaps for content marketing initiatives.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <h4>Content Creation</h4>
+                        <p>High-quality content tailored to each stage of the buyer's journey.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h4>Distribution Strategy</h4>
+                        <p>Multi-channel approach to maximize content reach and impact.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h4>Performance Tracking</h4>
+                        <p>Measurement and optimization based on campaign data.</p>
+                    </div>
+                </div>
+
+                <div class="service-process">
+                    <h3>My Content Marketing Process</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="process-step-number">1</div>
+                            <h4>Strategy Development</h4>
+                            <p>Defining goals, audience, and key messages.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">2</div>
+                            <h4>Content Planning</h4>
+                            <p>Creating an editorial calendar and content mix.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">3</div>
+                            <h4>Content Creation</h4>
+                            <p>Producing high-quality, engaging content assets.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">4</div>
+                            <h4>Distribution</h4>
+                            <p>Publishing and promoting content across channels.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">5</div>
+                            <h4>Analysis & Optimization</h4>
+                            <p>Measuring performance and refining the approach.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-pricing">
+                    <h3>Pricing Options</h3>
+                    <p>Choose the package that best fits your needs:</p>
+                    
+                    <div class="pricing-plans">
+                        <div class="pricing-plan">
+                            <h4>Starter Campaign</h4>
+                            <div class="price">$2,500 <span>/ month</span></div>
+                            <ul class="pricing-features">
+                                <li>4 blog posts</li>
+                                <li>2 social media posts per week</li>
+                                <li>Basic email newsletter</li>
+                                <li>Monthly performance report</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                        <div class="pricing-plan popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <h4>Growth Campaign</h4>
+                            <div class="price">$5,000 <span>/ month</span></div>
+                            <ul class="pricing-features">
+                                <li>8 blog posts</li>
+                                <li>4 social media posts per week</li>
+                                <li>Advanced email campaigns</li>
+                                <li>1 premium content piece</li>
+                                <li>Bi-weekly performance reports</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                        <div class="pricing-plan">
+                            <h4>Enterprise Campaign</h4>
+                            <div class="price">$10,000 <span>/ month</span></div>
+                            <ul class="pricing-features">
+                                <li>12+ blog posts</li>
+                                <li>Daily social media content</li>
+                                <li>Multi-channel email campaigns</li>
+                                <li>2 premium content pieces</li>
+                                <li>Weekly performance reviews</li>
+                                <li>Strategy adjustments</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-testimonials">
+                    <h3>What Clients Say</h3>
+                    
+                    <div class="service-testimonial">
+                        <div class="service-testimonial-content">
+                            "Sarah's content marketing campaign generated 250 qualified leads in just 3 months. Her strategic approach to content distribution helped us reach audiences we hadn't been able to engage before."
+                        </div>
+                        <div class="service-testimonial-author">
+                            <div class="service-author-img">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client">
+                            </div>
+                            <div>
+                                <h4>David Wilson</h4>
+                                <p>VP of Sales, B2B Tech Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-testimonial">
+                        <div class="service-testimonial-content">
+                            "Our brand awareness increased by 300% after implementing Sarah's content marketing strategy. The quality and consistency of the content elevated our brand perception in the market."
+                        </div>
+                        <div class="service-testimonial-author">
+                            <div class="service-author-img">
+                                <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Client">
+                            </div>
+                            <div>
+                                <h4>Jennifer Park</h4>
+                                <p>Marketing Director, Lifestyle Brands</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-cta">
+                    <h3>Ready to Launch Your Content Marketing Campaign?</h3>
+                    <p>Let's create content that builds your brand and drives business growth.</p>
+                    <a href="#contact" class="btn" style="margin-top: 20px;">Contact Me</a>
+                </div>
+            `,
+            'whitepapers': `
+                <div class="service-hero">
+                    <div class="service-hero-image">
+                        <img src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Whitepapers & Reports">
+                    </div>
+                    <div class="service-hero-content">
+                        <h2>Whitepapers & Reports</h2>
+                        <p>In-depth, authoritative content that establishes your company as a thought leader and generates high-quality leads. I research and write whitepapers that provide genuine value to your target audience while showcasing your expertise.</p>
+                        <p>My whitepapers are designed to educate, inform, and convert high-value prospects.</p>
+                    </div>
+                </div>
+
+                <div class="service-features">
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>Thorough Research</h4>
+                        <p>Comprehensive research to support claims and recommendations.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Data-Driven</h4>
+                        <p>Incorporation of relevant data and statistics.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Thought Leadership</h4>
+                        <p>Positioning your company as an industry authority.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h4>Lead Generation</h4>
+                        <p>Designed to capture high-quality leads.</p>
+                    </div>
+                </div>
+
+                <div class="service-process">
+                    <h3>My Whitepaper Process</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="process-step-number">1</div>
+                            <h4>Topic Development</h4>
+                            <p>Identifying valuable, relevant topics for your audience.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">2</div>
+                            <h4>Research</h4>
+                            <p>Gathering data, case studies, and supporting evidence.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">3</div>
+                            <h4>Outline & Structure</h4>
+                            <p>Creating a logical flow and compelling narrative.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">4</div>
+                            <h4>Writing</h4>
+                            <p>Crafting authoritative, engaging content.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">5</div>
+                            <h4>Design & Production</h4>
+                            <p>Collaborating with designers for professional layout.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-pricing">
+                    <h3>Pricing Options</h3>
+                    <p>Choose the package that best fits your needs:</p>
+                    
+                    <div class="pricing-plans">
+                        <div class="pricing-plan">
+                            <h4>Standard Whitepaper</h4>
+                            <div class="price">$2,000 <span>/ whitepaper</span></div>
+                            <ul class="pricing-features">
+                                <li>10-15 pages</li>
+                                <li>Thorough research</li>
+                                <li>Professional writing</li>
+                                <li>2 revisions</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                        <div class="pricing-plan popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <h4>Premium Whitepaper</h4>
+                            <div class="price">$3,500 <span>/ whitepaper</span></div>
+                            <ul class="pricing-features">
+                                <li>15-25 pages</li>
+                                <li>In-depth research</li>
+                                <li>Original data analysis</li>
+                                <li>Professional design</li>
+                                <li>3 revisions</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                        <div class="pricing-plan">
+                            <h4>Whitepaper Series</h4>
+                            <div class="price">$9,000 <span>/ 3 whitepapers</span></div>
+                            <ul class="pricing-features">
+                                <li>3 related whitepapers</li>
+                                <li>Comprehensive research</li>
+                                <li>Original data collection</li>
+                                <li>Professional design</li>
+                                <li>Promotional materials</li>
+                                <li>Unlimited revisions</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-testimonials">
+                    <h3>What Clients Say</h3>
+                    
+                    <div class="service-testimonial">
+                        <div class="service-testimonial-content">
+                            "Sarah's whitepaper has become our most effective lead generation tool, with a 60% conversion rate from download to demo request. The quality of research and writing exceeded our expectations."
+                        </div>
+                        <div class="service-testimonial-author">
+                            <div class="service-author-img">
+                                <img src="https://i.postimg.cc/HL0yMCg0/515845962-1435309587731054-4249387188832076388-n.jpg" alt="Client">
+                            </div>
+                            <div>
+                                <h4>Abdulwahab</h4>
+                                <p>VP of Marketing, Finova Capital</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-testimonial">
+                        <div class="service-testimonial-content">
+                            "The whitepaper series Sarah created established us as thought leaders in our industry. We've been invited to speak at conferences and featured in major publications as a result."
+                        </div>
+                        <div class="service-testimonial-author">
+                            <div class="service-author-img">
+                                <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Client">
+                            </div>
+                            <div>
+                                <h4>Robert Thompson</h4>
+                                <p>CEO, HealthTech Innovations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-cta">
+                    <h3>Ready to Establish Your Thought Leadership?</h3>
+                    <p>Let's create a whitepaper that showcases your expertise and generates leads.</p>
+                    <a href="#contact" class="btn" style="margin-top: 20px;">Contact Me</a>
+                </div>
+            `,
+            'editing': `
+                <div class="service-hero">
+                    <div class="service-hero-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Editing & Proofreading">
+                    </div>
+                    <div class="service-hero-content">
+                        <h2>Editing & Proofreading</h2>
+                        <p>Professional editing services to polish your existing content, ensuring clarity, consistency, and error-free communication. I refine content to make it more engaging, persuasive, and effective.</p>
+                        <p>From developmental editing to final proofreading, I help you present your best work to the world.</p>
+                    </div>
+                </div>
+
+                <div class="service-features">
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-spell-check"></i>
+                        </div>
+                        <h4>Proofreading</h4>
+                        <p>Correcting grammar, spelling, and punctuation errors.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h4>Copy Editing</h4>
+                        <p>Improving clarity, flow, and readability.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h4>Structural Editing</h4>
+                        <p>Enhancing overall organization and structure.</p>
+                    </div>
+                    <div class="service-feature">
+                        <div class="service-feature-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h4>Content Enhancement</h4>
+                        <p>Strengthening arguments and messaging.</p>
+                    </div>
+                </div>
+
+                <div class="service-process">
+                    <h3>My Editing Process</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="process-step-number">1</div>
+                            <h4>Initial Review</h4>
+                            <p>Assessing the content for major issues and areas of improvement.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">2</div>
+                            <h4>Structural Editing</h4>
+                            <p>Improving overall organization and flow.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">3</div>
+                            <h4>Copy Editing</h4>
+                            <p>Refining language, clarity, and style.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">4</div>
+                            <h4>Proofreading</h4>
+                            <p>Final check for grammar, spelling, and punctuation.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="process-step-number">5</div>
+                            <h4>Quality Assurance</h4>
+                            <p>Ensuring all changes maintain the original intent.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-pricing">
+                    <h3>Pricing Options</h3>
+                    <p>Choose the package that best fits your needs:</p>
+                    
+                    <div class="pricing-plans">
+                        <div class="pricing-plan">
+                            <h4>Proofreading</h4>
+                            <div class="price">$0.03 <span>/ word</span></div>
+                            <ul class="pricing-features">
+                                <li>Grammar, spelling, punctuation</li>
+                                <li>Consistency check</li>
+                                <li>Basic formatting</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                        <div class="pricing-plan popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <h4>Copy Editing</h4>
+                            <div class="price">$0.06 <span>/ word</span></div>
+                            <ul class="pricing-features">
+                                <li>All proofreading services</li>
+                                <li>Improved clarity and flow</li>
+                                <li>Style consistency</li>
+                                <li>Tone adjustments</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                        <div class="pricing-plan">
+                            <h4>Developmental Editing</h4>
+                            <div class="price">$0.10 <span>/ word</span></div>
+                            <ul class="pricing-features">
+                                <li>All copy editing services</li>
+                                <li>Structural improvements</li>
+                                <li>Content enhancement</li>
+                                <li>Substantive revisions</li>
+                                <li>Detailed feedback</li>
+                            </ul>
+                            <a href="#contact" class="btn">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-testimonials">
+                    <h3>What Clients Say</h3>
+                    
+                    <div class="service-testimonial">
+                        <div class="service-testimonial-content">
+                            "Sarah transformed our technical whitepaper into an engaging, accessible document without losing any of the technical accuracy. The edited version has been downloaded 3x more than the original."
+                        </div>
+                        <div class="service-testimonial-author">
+                            <div class="service-author-img">
+                                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client">
+                            </div>
+                            <div>
+                                <h4>Dr. James Wilson</h4>
+                                <p>CTO, TechSolutions</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-testimonial">
+                        <div class="service-testimonial-content">
+                            "As a non-native English speaker, I rely on Sarah to polish my business communications. She maintains my voice while ensuring my writing is professional and error-free."
+                        </div>
+                        <div class="service-testimonial-author">
+                            <div class="service-author-img">
+                                <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Client">
+                            </div>
+                            <div>
+                                <h4>Maria Gonzalez</h4>
+                                <p>Founder, Global Consulting</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-cta">
+                    <h3>Ready to Polish Your Content?</h3>
+                    <p>Let's refine your writing to make it clear, compelling, and professional.</p>
+                    <a href="#contact" class="btn" style="margin-top: 20px;">Contact Me</a>
+                </div>
+            `
+        };
+
+        // Open service modal when clicking Learn More buttons
+        serviceBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const service = btn.getAttribute('data-service');
+                serviceModalContent.innerHTML = serviceTemplates[service];
+                serviceModal.classList.add('active');
+            });
+        });
+
+        // Close service modal
+        serviceModalClose.addEventListener('click', () => {
+            serviceModal.classList.remove('active');
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === serviceModal) {
+                serviceModal.classList.remove('active');
+            }
+        });
+
+        // Also handle service links in footer
+        document.querySelectorAll('.footer-links .service-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const service = btn.getAttribute('data-service');
+                serviceModalContent.innerHTML = serviceTemplates[service];
+                serviceModal.classList.add('active');
+            });
+        });
+
+        // Animate skills on scroll
+        const skillBars = document.querySelectorAll('.skill-progress');
+        
+        function animateSkills() {
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('about-text')) {
+                        animateSkills();
+                    }
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Performance optimizations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lazy load images
+            const lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
+            
+            if ('IntersectionObserver' in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove('lazy');
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        });
+
+        // Preload critical resources
+        function preloadResources() {
+            const resources = [
+                'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+                'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80'
+            ];
+
+            resources.forEach(resource => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = resource;
+                document.head.appendChild(link);
+            });
+        }
+
+        // Initialize preloading
+        window.addEventListener('load', preloadResources);
+    </script>
+</body>
+</html>
